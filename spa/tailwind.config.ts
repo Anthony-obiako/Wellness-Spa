@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        activa: ["Activa", "sans-serif"],   // For headings
+        manrope: ["Manrope", "sans-serif"], // For paragraphs
+      },
     },
   },
   plugins: [],
