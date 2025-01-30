@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { Bars3Icon, XMarkIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -20,7 +21,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 backdrop-blur-lg transition-all duration-300`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-10">
+      <div className="container mx-auto flex items-center justify-between md:py-4 py-1 px-1 md:px-10">
         {/* Left-side Desktop Links */}
         <div className="hidden md:flex flex-1 justify-end lg:gap-28 md:gap-14 gap-8">
           {navLinks.slice(0, Math.ceil(navLinks.length / 2)).map((link) => (
@@ -44,7 +45,7 @@ const Navbar = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <Image
-              src="/images/wellness.png"
+              src="/images/wellness-logo.png"
               alt="wellness logo"
               width={90}
               height={90}
@@ -67,16 +68,33 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden"
-          onClick={() => setIsOpen(!isOpen)} // Toggle isOpen on click
-        >
-          {isOpen ? (
-            <XMarkIcon className="w-6 h-6 text-gray-700" />
-          ) : (
-            <Bars3Icon className="w-6 h-6 text-gray-700" />
-          )}
-        </button>
+        <div className="flex items-center md:hidden space-x-3">
+          <a
+            href="tel:+1234567890" // Replace with actual phone number
+            className="text-amber-100  transition p-2 border-2 border-amber-100 rounded-full"
+          >
+            <PhoneIcon className="w-3 h-3" />
+          </a>
+          <a
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-amber-100 transition p-2 border-2 border-amber-100 rounded-full"
+          >
+            <FaInstagram className="w-3 h-3" />
+          </a>
+
+          <button
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)} // Toggle isOpen on click
+          >
+            {isOpen ? (
+              <XMarkIcon className="w-9 h-9 text-amber-100 font-extralight" />
+            ) : (
+              <Bars3Icon className="w-9 h-9 text-amber-100" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
