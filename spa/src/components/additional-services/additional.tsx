@@ -14,11 +14,11 @@ const services = [
 export default function Additional() {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0.5, y: 20 }} // Less initial movement for faster appearance
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 1.7, ease: "easeOut" }}
-      className="relative h-full w-full flex items-center justify-center bg-cover bg-center bg-[url('/images/grass-1.jpg')] before:absolute before:inset-0 before:bg-black/90 before:z-0 pt-10 md:pt-14 px-4"
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="relative h-full w-full flex items-center justify-center bg-cover bg-center bg-[url('/images/grass-1.jpg')] before:absolute before:inset-0 before:bg-black/80 before:z-0 pt-10 md:pt-14 px-4"
     >
       <div className="z-10 -mr-2">
         <div className="w-full">
@@ -32,7 +32,6 @@ export default function Additional() {
                 className={`relative w-full h-52 md:h-72 lg:h-80 overflow-hidden rounded-3xl flex
                     ${index === 0 || index === 2 ? "-mt-12" : ""}`}
               >
-            
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -40,7 +39,7 @@ export default function Additional() {
                   objectFit="cover"
                   className="rounded-lg border-none w-full"
                 />
-            
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent flex items-end justify-center p-1">
                   <p className="text-sm md:text-lg lg:text-2xl text-center font-activa text-amber-50 w-full">
                     {service.title}

@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import Button from "@/components/button/button";
 
-export default function Hero() {
+export default function Hero() {;
+
   return (
     <section className="relative h-screen w-full flex items-center justify-center bg-cover bg-center bg-[url('/images/home-4.jpg')] before:absolute before:inset-0 before:bg-black/50 before:z-0 pt-36">
       {/* Animated Content */}
@@ -24,8 +25,11 @@ export default function Hero() {
           <p className="md:text-lg text-amber-50 hidden sm:block">
             Discover a new source of energy and vitality.
           </p>
-          <Button size="lg" className="mt-6 bg-black text-amber-50">
-            Book a visit
+          <Button
+            className="mt-6 bg-black text-amber-50 px-5 py-4 rounded-full"
+            modalContent
+          >
+            Book a Visit
           </Button>
         </div>
       </motion.div>

@@ -32,7 +32,7 @@ const Booking = ({ main }: prop) => {
 
   if (main) {
     return (
-      <div className="backdrop-blur-lg sm:flex max-w-5xl">
+      <div className=" backdrop-blur-lg sm:flex max-w-5xl rounded-3xl">
         <section className="justify-items-center rounded-2xl mx-2 my-5 py-2 px-2 text-start md:p-6 md:justify-between md:items-center w-full">
           <div className="text-amber-50 mt-2 mb-4">
             <h1 className="px-1 font-activa mb-4 md:mb-2 text-lg md:text-2xl">
@@ -158,14 +158,14 @@ const Booking = ({ main }: prop) => {
   } else {
     return (
       <div className="px-4 w-full justify-items-center">
-        <section className="justify-items-center text-center rounded-2xl mx-2 my-5 py-2 px-2 backdrop-blur-lg bg-black/50 sm:flex sm:text-start md:p-6 lg:max-w-5xl md:max-w-3xl md:justify-between md:items-center w-full">
+        <section className="justify-items-center text-center rounded-2xl mx-2 my-5 py-2 px-2 bg-white/5 backdrop-blur-lg sm:flex sm:text-start md:p-6 lg:max-w-5xl md:max-w-3xl md:justify-between md:items-center w-full">
           <div className="text-amber-50 mt-2 mb-4">
             <h1 className="px-1 font-activa mb-4 md:mb-2 text-lg md:text-2xl">
               BOOK YOUR VISIT RIGHT NOW
             </h1>
             <p className="text-sm max-w-lg">
               Steaming services are available by appointment only. Dont miss out
-              on the opportunity to get maximum comfort and relaxarion
+              on the opportunity to get maximum comfort and relaxation
             </p>
           </div>
           <div className="max-w-96 w-full">
