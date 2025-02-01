@@ -21,7 +21,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 backdrop-blur-lg transition-all duration-300`}
     >
-      <div className="container mx-auto flex items-center justify-between md:py-4 py-1 px-1 md:px-10">
+      <div className="container mx-auto flex items-center justify-between py-1 px-1 md:px-10">
         {/* Left-side Desktop Links */}
         <div className="hidden md:flex flex-1 justify-end lg:gap-28 md:gap-14 gap-8">
           {navLinks.slice(0, Math.ceil(navLinks.length / 2)).map((link) => (
@@ -38,19 +38,15 @@ const Navbar = () => {
 
         {/* Logo (Centered on Desktop) with Bottom-to-Top Animation */}
         <Link href="/" className="md:px-14 lg:px-28 md:flex md:justify-center">
-          <motion.div
-            className="w-14 sm:w-full cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+          <div
+            className="w-14 sm:w-full cursor-pointer">
             <Image
               src="/images/wellness-logo.png"
               alt="wellness logo"
               width={90}
               height={90}
             />
-          </motion.div>
+          </div>
         </Link>
 
         {/* Right-side Desktop Links */}
