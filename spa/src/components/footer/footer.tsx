@@ -1,14 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Bars3Icon, XMarkIcon, PhoneIcon } from "@heroicons/react/24/solid";
-import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
 const Footer = () => {
-  const [isOpen, setIsOpen] = useState(false); // Added the isOpen state
 
   const navLinks = [
     { name: "Services", href: "/services" },
