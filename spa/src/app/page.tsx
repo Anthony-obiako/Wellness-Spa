@@ -1,17 +1,20 @@
-import Image from "next/image";
+
 import Navbar from "@/components/navbar/navbar";
 import Hero from "@/components/hero/hero";
-import Booking from "@/components/booking/booking";
-import { main } from "framer-motion/client";
+import IMMERSE from "@/components/extras/immerse";
 import Additional from "@/components/additional-services/additional";
+import Footer from "@/components/footer/footer"
+import Wellness from "@/components/extras/wellness";
 
 export default function Home() {
   return (
     <div className="">
       <Navbar />
       <Hero />
+      <Wellness />
       <Additional />
-      <Booking main={true} />
+      <IMMERSE />
+      <Footer />
     </div>
   );
 }

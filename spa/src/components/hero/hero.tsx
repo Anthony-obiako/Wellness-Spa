@@ -6,15 +6,16 @@ import Button from "@/components/button/button";
 export default function Hero() {;
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center bg-cover bg-center bg-[url('/images/home-4.jpg')] before:absolute before:inset-0 before:bg-black/50 before:z-0 pt-36">
+    <section className="relative h-screen w-full flex justify-center bg-cover bg-center bg-[url('/images/home-4.jpg')] before:absolute before:inset-0 before:bg-black/30 before:z-0 pt-48">
       {/* Animated Content */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 1, ease: "easeOut" }}
         className="text-center text-white"
       >
+        <div className="absolute inset-x-0 bottom-0 h-1/6 bg-gradient-to-t from-black/90 to-transparent" />
         <div className="z-10 relative px-12">
           <h1 className="mb-10 lg:text-7xl/tight md:text-5xl/tight text-2xl/normal text-white font-activa max-w-[1000px] ">
             AB WELLNESS

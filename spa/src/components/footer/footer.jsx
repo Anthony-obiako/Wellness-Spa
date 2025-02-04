@@ -80,7 +80,7 @@ const Footer = () => {
       {/* Desktop Layout: Separate text containers on left and right with links centered */}
       <div className="hidden md:flex h-full max-h-32 items-center justify-center">
         
-        <div className="text-amber-50 text-xs md:text-base text-nowrap">
+        <div className="text-amber-50 text-xs md:text-sm text-nowrap">
           <p>Terms of Service Agreement</p>
           <p>Privacy Policy</p>
           <p>@2025ABWellness</p>
@@ -128,7 +128,7 @@ const Footer = () => {
         </div>
 
         {/* Right Text */}
-        <div className="text-amber-50 text-xs md:text-base whitespace-nowrap">
+        <div className="text-amber-50 text-xs md:text-sm whitespace-nowrap">
           <p>+48 881206 660</p>
           <p>UI. Jana Ostroroga 24 E.</p>
           <p>01-163 Warzawa</p>
