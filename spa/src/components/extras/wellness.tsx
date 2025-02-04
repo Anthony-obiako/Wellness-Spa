@@ -10,16 +10,16 @@ export default function Wellness() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="relative md:h-screen h-full w-full flex items-center justify-center pt-6 md:pt-0 bg-cover bg-center bg-[url('/images/home-3.jpg')] before:absolute before:inset-0 before:bg-black/40 before:z-0 px-5 md:px-0 md:mt-14 md:mr-6"
+      className="relative md:h-screen h-full w-full flex items-center justify-center pt-6 md:pt-0 "
     >
-      <div className=" h-full flex justify-between items-center md:w-[90vw] w-full">
-        <div className="w-full flex flex-col h-full  ">
-          <div className="absolute inset-x-0 top-0 h-1/5 bg-black/70" />
+      <div className=" h-full flex justify-between items-center md:w-[90vw] w-full px-5 md:px-0 md:mr-6">
+        <div className="w-full flex flex-col h-full bg-cover bg-center bg-[url('/images/home-3.jpg')] before:absolute before:inset-0 before:bg-black/40 before:z-0 px-5 md:px-0 md:pt-14 md:mr-6 ">
+          <div className="absolute inset-x-0 top-0 h-1/4 bg-black/90" />
 
           {/* Bottom Gradient Overlay */}
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/90 to-transparent" />
           <h1 className="font-activa text-xl md:text-3xl lg:text-4xl text-amber-50 md:mb-16 mb-8 z-10 w-full">
-            <span className="lg:ml-24 md:ml-14 ml-5 block">
+            <span className="lg:ml-20 md:ml-14 ml-5 block">
               A WELLNESS SPA COMPLEX{" "}
             </span>{" "}
             IN THE HEART OF WARSAW
@@ -68,7 +68,7 @@ export default function Wellness() {
             Find Out More
           </button>
         </div>
-        <div className=" max-h-[900px] max-w-[500px] hidden h-full w-full z-10 md:flex justify-items-center items-center md:justify-end lg:justify-center mt-16 bg-black/60">
+        <div className=" max-h-[900px] max-w-[500px] hidden h-full w-full z-10 md:flex justify-items-center items-center md:justify-end lg:justify-center mt-16 bg-black/50">
           <Image
             src="/images/random-3.jpg"
             alt="wellness"
