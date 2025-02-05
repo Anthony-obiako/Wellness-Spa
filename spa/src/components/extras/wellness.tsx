@@ -10,11 +10,11 @@ export default function Wellness() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="relative md:h-screen h-full w-full flex items-center justify-center pt-6 md:pt-0 "
+      className="relative md:h-screen h-full w-full flex items-center justify-center pt-6 md:pt-10 md:pb-8 "
     >
-      <div className=" h-full flex justify-between items-center md:w-[90vw] w-full px-5 md:px-0 md:mr-6">
-        <div className="w-full flex flex-col h-full bg-cover bg-center bg-[url('/images/home-3.jpg')] before:absolute before:inset-0 before:bg-black/40 before:z-0 px-5 md:px-0 md:pt-14 md:mr-6 ">
-          <div className="absolute inset-x-0 top-0 h-1/4 bg-black/90" />
+      <div className=" h-full flex justify-between items-center md:w-[85vw] w-full px-5 md:px-0 md:mr-6 bg-cover bg-center bg-[url('/images/home-3.jpg')] before:absolute before:inset-0 before:bg-black/40 before:z-0">
+        <div className="w-full flex flex-col h-full   px-5 md:px-0 md:pt-14 md:mr-6 ">
+          <div className="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black/100 from-20% via-black/90 via-70% to-transparent to-100%" />
 
           {/* Bottom Gradient Overlay */}
           <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/90 to-transparent" />
@@ -68,11 +68,11 @@ export default function Wellness() {
             Find Out More
           </button>
         </div>
-        <div className=" max-h-[900px] max-w-[500px] hidden h-full w-full z-10 md:flex justify-items-center items-center md:justify-end lg:justify-center mt-16 bg-black/50">
+        <div className=" max-h-[900px] max-w-[550px] hidden h-full w-full z-10 md:flex items-center lg:justify-end mt-16 bg-gradient-to-l from-black/100 from-70% via-black/90 via-70% to-black/50 to-70% ">
           <Image
             src="/images/random-3.jpg"
             alt="wellness"
-            width={450}
+            width={500}
             height={900}
             className=" rounded-2xl object-cover"
           />
