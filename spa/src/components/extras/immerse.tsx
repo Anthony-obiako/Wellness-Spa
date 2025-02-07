@@ -12,10 +12,11 @@ const images = [
 ];
 
 export default function IMMERSE() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeImage, setActiveImage] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const [direction, setDirection] = useState<"left" | "right">("right");
 
+  // Handle mobile detection
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -23,37 +24,145 @@ export default function IMMERSE() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const nextImage = () => {
-    setDirection("right");
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+  // Desktop carousel controls
+  const nextImage = () => setActiveImage((prev) => (prev + 1) % images.length);
+  const prevImage = () =>
+    setActiveImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+
+  // Mobile swipe handlers
+  const handleTouchStart = (e: React.TouchEvent) =>
+    setTouchStart(e.touches[0].clientX);
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const touchEnd = e.changedTouches[0].clientX;
+    const diff = touchStart - touchEnd;
+    if (diff > 50) nextImage();
+    if (diff < -50) prevImage();
   };
 
-  const prevImage = () => {
-    setDirection("left");
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  // Mobile autoplay
+  useEffect(() => {
+    if (isMobile) {
+      const interval = setInterval(nextImage, 9000);
+      return () => clearInterval(interval);
+    }
+  }, [isMobile, activeImage]);
 
-  const variants = {
-    enter: (direction: string) => ({
-      x: isMobile ? (direction === "right" ? "100%" : "-100%") : 0,
-      scale: isMobile ? 1 : 0.9,
-      opacity: isMobile ? 0 : 0.7,
-    }),
-    center: {
-      x: 0,
-      scale: 1,
-      opacity: 1,
-      transition: { duration: 0.3 },
-    },
-    exit: (direction: string) => ({
-      x: isMobile ? (direction === "right" ? "-100%" : "100%") : 0,
-      scale: isMobile ? 1 : 0.9,
-      opacity: isMobile ? 0 : 0.7,
-      transition: { duration: 0.3 },
-    }),
-  };
+  // Desktop Carousel
+  const gap = 70; // Gap between images in pixels
+  const imageWidth = 750; // Main image width
+  const adjacentWidth = 600; // Adjacent image width
 
-  const gap = 20;
+  const DesktopCarousel = (
+    <div className="hidden md:flex w-full h-[550px] items-center justify-center relative overflow-visible mb-40">
+      {images.map((img, index) => {
+        // Calculate the raw difference
+        let position = index - activeImage;
+
+        // Adjust (wrap) the position if it's outside the "shortest path"
+        if (position > images.length / 2) {
+          position -= images.length;
+        } else if (position < -images.length / 2) {
+          position += images.length;
+        }
+
+        const isActive = position === 0;
+        const isAdjacent = Math.abs(position) === 1;
+
+        // Calculate dynamic scale, opacity, and z-index based on position
+        const scale = isActive ? 1 : isAdjacent ? 0.85 : 0.7;
+        const opacity = isActive ? 2 : isAdjacent ? 0.8 : 0.6;
+        const zIndex = isActive ? 10 : isAdjacent ? 5 : 0;
+
+        // Calculate the horizontal offset based on your image width and gap
+        const xOffset = position * (imageWidth - gap);
+
+        return (
+          <motion.div
+            key={`${img}-${index}`}
+            className="absolute h-[500px] cursor-pointer origin-center"
+            style={{
+              width: isActive ? imageWidth : adjacentWidth,
+              x: xOffset,
+              scale,
+              opacity,
+              zIndex,
+            }}
+            animate={{
+              x: xOffset,
+              scale,
+              opacity,
+            }}
+            transition={{ type: "spring", stiffness: 70, damping: 30 }}
+            onClick={() => !isActive && setActiveImage(index)}
+          >
+            <Image
+              src={img}
+              alt="Spa facility"
+              fill
+              className="rounded-3xl object-cover shadow-xl"
+            />
+          </motion.div>
+        );
+      })}
+
+      {/* Arrows positioned relative to main image */}
+      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[730px] flex justify-between z-30">
+        <button
+          onClick={prevImage}
+          className="bg-black/20 px-3 rounded-full backdrop-blur-sm hover:bg-black/50 transition-all"
+        >
+          <span className="text-5xl text-white/50 font-thin">&lt;</span>
+        </button>
+        <button
+          onClick={nextImage}
+          className="bg-black/20 px-3 rounded-full backdrop-blur-sm hover:bg-black/50 transition-all"
+        >
+          <span className="text-5xl text-white/50 font-thin">&gt;</span>
+        </button>
+      </div>
+    </div>
+  );
+
+  // Mobile Carousel
+  const MobileCarousel = (
+    <div
+      className="md:hidden w-full relative h-[400px] mb-28"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeImage}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="w-full h-full mb-3"
+        >
+          <Image
+            src={images[activeImage]}
+            alt="Spa facility"
+            fill
+            className="object-cover rounded-xl"
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      <div className=" flex gap-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveImage(index)}
+            className={`w-full h-1 rounded-full ${
+              activeImage === index
+                ? "bg-white/30 backdrop-blur-lg"
+                : "bg-white/10 backdrop-blur-lg"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
   return (
     <motion.section
       initial={{ opacity: 0.5, y: 20 }}
@@ -72,123 +181,11 @@ export default function IMMERSE() {
             </span>{" "}
             OF COMFORT AND STYLE
           </h1>
-
           {/* Carousel Container */}
-          <div className="relative h-[500px] w-full overflow-hidden">
-            {/* Desktop Layout */}
-            <div className="relative w-full h-[400px] overflow-hidden">
-              {[-1, 0, 1].map((offset) => {
-                // Calculate the proper index wrapping around the array
-                const index =
-                  (currentIndex + offset + images.length) % images.length;
-
-                // Set positioning:
-                // - The center (active) image is 50% width and centered (left: 25%)
-                // - The previous image is full width, positioned so its right quarter is visible (left: -25%)
-                // - The next image is full width, positioned so its left quarter is visible (left: 75%)
-                let style = {};
-                if (offset === 0) {
-                  // Center image: subtract full gap from width and push it inward by half the gap
-                  style = {
-                    left: `calc(25% + ${gap / 2}px)`,
-                    width: `calc(50% - ${gap}px)`,
-                  };
-                } else if (offset === -1) {
-                  // Previous image: move right by half the gap and reduce width
-                  style = {
-                    left: `calc(-25% + ${gap / 2}px)`,
-                    width: `calc(100% - ${gap}px)`,
-                  };
-                } else if (offset === 1) {
-                  // Next image: move right by half the gap and reduce width
-                  style = {
-                    left: `calc(75% + ${gap / 2}px)`,
-                    width: `calc(100% - ${gap}px)`,
-                  };
-                }
-
-                return (
-                  <div
-                    key={index}
-                    className="absolute top-0 h-full transition-all duration-300 flex gap-5"
-                    style={style}
-                  >
-                    <Image
-                      src={images[index]}
-                      alt={`Spa image ${index + 1}`}
-                      fill
-                      className="object-cover rounded-2xl shadow-xl"
-                    />
-                    {offset === 0 && (
-                      <>
-                        <button
-                          onClick={prevImage}
-                          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-black/70 transition-all backdrop-blur-sm"
-                        >
-                          &lt;
-                        </button>
-                        <button
-                          onClick={nextImage}
-                          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-black/70 transition-all backdrop-blur-sm"
-                        >
-                          &gt;
-                        </button>
-                      </>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Mobile Layout */}
-
-            {isMobile && (
-              <AnimatePresence initial={false} custom={direction}>
-                <motion.div
-                  key={currentIndex}
-                  custom={direction}
-                  variants={variants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  className="absolute inset-0 h-full w-full mb-10"
-                  drag="x"
-                  dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.1}
-                  onDragEnd={(_, { offset, velocity }) => {
-                    if (offset.x > 50 || velocity.x > 500) prevImage();
-                    if (offset.x < -50 || velocity.x < -500) nextImage();
-                  }}
-                >
-                  <div className="relative h-full w-full">
-                    <Image
-                      src={images[currentIndex]}
-                      alt={`Spa image ${currentIndex + 1}`}
-                      fill
-                      className="object-cover rounded-2xl shadow-xl"
-                    />
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            )}
-          </div>
-
-          {/* Mobile Pagination */}
-          {isMobile && (
-            <div className="flex justify-center space-x-2 mt-4 md:hidden mb-24">
-              {images.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`h-1 rounded-full transition-all w-full ${
-                    idx === currentIndex ? "bg-white/80" : "bg-white/30"
-                  }`}
-                />
-              ))}
-            </div>
-          )}
+          {DesktopCarousel}
+          {MobileCarousel}
         </div>
-        <Booking main={true}/>
+        <Booking main={true} />
       </div>
     </motion.section>
   );

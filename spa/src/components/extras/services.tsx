@@ -76,6 +76,15 @@ export default function Services() {
   const [activeService, setActiveService] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Handle mobile detection
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const currentService = servicesData[activeService];
 
@@ -121,13 +130,15 @@ export default function Services() {
 
   // Autoplay for mobile gallery
   useEffect(() => {
+    if(isMobile) {
     const interval = setInterval(() => {
       setCurrentImageIndex(
         (prev) => (prev + 1) % currentService.gallery.length
       );
-    }, 5000);
+    }, 4000);
     return () => clearInterval(interval);
-  }, [currentService.gallery.length, activeService]);
+  }
+  }, [isMobile, currentService.gallery.length, activeService]);
 
   // Mobile View
   
