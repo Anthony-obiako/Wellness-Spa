@@ -51,7 +51,7 @@ const Booking = ({ main }: prop) => {
                 placeholder="Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full rounded-full bg-[#0f3529] py-3 text-amber-50 placeholder-amber-50 text-center text-sm"
+                className="w-full rounded-full bg-[#0f3529] py-3 text-amber-50 placeholder-amber-50 text-center text-sm focus:placeholder-transparent focus:outline-none focus:ring-0"
                 required
               />
               <input
@@ -60,7 +60,7 @@ const Booking = ({ main }: prop) => {
                 placeholder="Phone number"
                 value={formData.phonenumber}
                 onChange={handleChange}
-                className="w-full rounded-full bg-[#0f3529] text-amber-50 placeholder-amber-50 py-3 text-center text-sm"
+                className="w-full rounded-full bg-[#0f3529] text-amber-50 placeholder-amber-50 py-3 text-center text-sm focus:placeholder-transparent focus:outline-none focus:ring-0"
                 required
               />
               <button
@@ -176,7 +176,7 @@ const Booking = ({ main }: prop) => {
                 placeholder="Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full rounded-full bg-[#0f3529] py-3 text-amber-50 placeholder-amber-50 text-center text-sm"
+                className="w-full rounded-full bg-[#0f3529] py-3 text-amber-50 placeholder-amber-50 text-center text-sm focus:placeholder-transparent focus:outline-none focus:ring-0"
                 required
               />
               <input
@@ -185,7 +185,7 @@ const Booking = ({ main }: prop) => {
                 placeholder="Phone number"
                 value={formData.phonenumber}
                 onChange={handleChange}
-                className="w-full rounded-full bg-[#0f3529] text-amber-50 placeholder-amber-50 py-3 text-center text-sm"
+                className="w-full rounded-full bg-[#0f3529] text-amber-50 placeholder-amber-50 py-3 text-center text-sm focus:placeholder-transparent focus:outline-none focus:ring-0"
                 required
               />
               <button

@@ -6,6 +6,7 @@ import Additional from "@/components/additional-services/additional";
 import Footer from "@/components/footer/footer"
 import Wellness from "@/components/extras/wellness";
 import Oasis from "@/components/extras/oasis";
+import Services from "@/components/extras/services";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Wellness />
+      <Services />
       <Additional />
       <Oasis />
       <IMMERSE />

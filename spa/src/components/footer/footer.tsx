@@ -14,7 +14,7 @@ const Footer = () => {
   ];
 
   return (
-    <nav className="w-full px-4 py-2 md:px-14">
+    <nav className="w-full px-4 py-2 md:px-14 md:mt-10">
       {/* Mobile Layout */}
       <div className="flex flex-col items-center md:hidden p-2">
         
@@ -33,13 +33,13 @@ const Footer = () => {
           </div>
 
           {/* Center Logo */}
-          <Link href="/" className="flex md:justify-center mx-4">
+          <Link href="/" className="flex md:justify-center mx-9">
             <div className="sm:w-full cursor-pointer">
               <Image
                 src="/images/wellness-logo.png"
                 alt="wellness logo"
-                width={90}
-                height={90}
+                width={50}
+                height={50}
               />
             </div>
           </Link>
@@ -98,13 +98,13 @@ const Footer = () => {
           </div>
 
           {/* Center Logo */}
-          <Link href="/" className="flex md:justify-center mx-4">
+          <Link href="/" className="flex md:justify-center mx-9">
             <div className="sm:w-full cursor-pointer">
               <Image
                 src="/images/wellness-logo.png"
                 alt="wellness logo"
-                width={90}
-                height={90}
+                width={50}
+                height={50}
               />
             </div>
           </Link>

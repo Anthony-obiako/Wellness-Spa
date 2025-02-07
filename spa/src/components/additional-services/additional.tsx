@@ -14,7 +14,7 @@ const services = [
 export default function Additional() {
   return (
     <motion.section
-      className="relative h-full w-full flex items-center justify-center bg-cover bg-center bg-[url('/images/grass-1.jpg')] before:absolute before:inset-0 before:bg-black/60 before:z-0 pt-10 md:pt-14 px-4"
+      className="relative h-full w-full flex items-center justify-center bg-cover bg-center bg-[url('/images/grass-1.jpg')] before:absolute before:inset-0 before:bg-black/60 before:z-0 pt-10 md:pt-14 px-4 md:mt-24"
     >
       <div className="absolute inset-x-0 top-0 h-1/3 bg-black/70" />
 
@@ -22,7 +22,7 @@ export default function Additional() {
       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent" />
       <div className="z-10">
         <div className="w-full">
-          <h1 className="font-activa text-xl md:text-3xl lg:text-4xl text-amber-50 lg:ml-24 md:ml-14 ml-7">
+          <h1 className="font-activa text-xl md:text-3xl lg:text-5xl text-amber-50 lg:ml-24 md:ml-14 ml-7">
             ADDITIONAL SERVICES
           </h1>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 lg:gap-4 mt-24 md:mt-24 md:mb-28 mb-24 lg:mb-44 lg:mt-36 min-w-[85vw] mr-2">
