@@ -60,7 +60,7 @@ export default function IMMERSE() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="relative h-full w-full flex items-center justify-center bg-cover bg-center bg-[url('/images/grass-2.jpg')] pt-10 md:pt-14 px-4"
+      className="relative h-full w-full flex items-center justify-center bg-cover bg-center bg-[url('/images/grass-2.jpg')] pt-10 md:pt-14 px-4 pb-12"
     >
       <div className="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black/100 from-20% via-black/90 via-80% to-transparent to-200%" />
       <div className="absolute inset-x-0 bottom-0 md:h-1/4 h-1/2 bg-gradient-to-t from-black/90 from-20% to-transparent" />
@@ -151,7 +151,7 @@ export default function IMMERSE() {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  className="absolute inset-0 h-full w-full"
+                  className="absolute inset-0 h-full w-full mb-10"
                   drag="x"
                   dragConstraints={{ left: 0, right: 0 }}
                   dragElastic={0.1}
@@ -175,7 +175,7 @@ export default function IMMERSE() {
 
           {/* Mobile Pagination */}
           {isMobile && (
-            <div className="flex justify-center space-x-2 mt-4 md:hidden">
+            <div className="flex justify-center space-x-2 mt-4 md:hidden mb-24">
               {images.map((_, idx) => (
                 <button
                   key={idx}
@@ -188,7 +188,7 @@ export default function IMMERSE() {
             </div>
           )}
         </div>
-        <Booking main={true} />
+        <Booking main={true}/>
       </div>
     </motion.section>
   );
