@@ -59,7 +59,7 @@ export default function Modal({ open, closeModal, children }: ModalProps) {
                       placeholder="Name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full rounded-full bg-[#0f3529] lg:py-4 py-3 text-amber-50 placeholder-amber-50 text-center text-sm"
+                      className="w-full rounded-full bg-[#0f3529] lg:py-4 py-3 text-amber-50 placeholder-amber-50 text-center text-sm focus:placeholder-transparent focus:outline-none focus:ring-0"
                       required
                     />
                     <input
@@ -68,7 +68,7 @@ export default function Modal({ open, closeModal, children }: ModalProps) {
                       placeholder="Phone number"
                       value={formData.phonenumber}
                       onChange={handleChange}
-                      className="w-full rounded-full bg-[#0f3529] text-amber-50 placeholder-amber-50 lg:py-4 py-3 text-center text-sm"
+                      className="w-full rounded-full bg-[#0f3529] text-amber-50 placeholder-amber-50 lg:py-4 py-3 text-center text-sm focus:placeholder-transparent focus:outline-none focus:ring-0"
                       required
                     />
                     <button

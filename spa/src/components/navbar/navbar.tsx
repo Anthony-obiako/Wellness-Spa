@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
 
         {/* Logo (Centered on Desktop) with Bottom-to-Top Animation */}
-        <Link href="/" className="md:px-14 lg:px-28 md:flex md:justify-center">
+        <Link href="/" className="md:px-14 lg:px-28 md:flex md:justify-center md:my-2">
           <div
             className="w-14 sm:w-full cursor-pointer">
             <Image
