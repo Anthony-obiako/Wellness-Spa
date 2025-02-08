@@ -165,10 +165,6 @@ export default function IMMERSE() {
   );
   return (
     <motion.section
-      initial={{ opacity: 0.5, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
       className="relative h-full w-full flex items-center justify-center bg-cover bg-center bg-[url('/images/grass-2.jpg')] pt-10 md:pt-14 px-4 pb-12"
     >
       <div className="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black/100 from-20% via-black/90 via-80% to-transparent to-200%" />

@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
 
         {/* Logo (Centered on Desktop) with Bottom-to-Top Animation */}
-        <Link href="/" className="md:px-14 lg:px-28 md:flex md:justify-center md:my-2">
+        <Link href="/" className="md:px-14 lg:px-28 md:flex md:justify-center md:my-2 ml-2">
           <div
             className="w-14 sm:w-full cursor-pointer">
             <Image
@@ -64,7 +64,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="flex items-center md:hidden space-x-3">
+        <div className="flex items-center md:hidden space-x-3 mr-2">
           <a
             href="tel:+1234567890" // Replace with actual phone number
             className="text-amber-100  transition p-2 border-2 border-amber-100 rounded-full"

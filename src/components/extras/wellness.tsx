@@ -6,10 +6,6 @@ import { motion } from "framer-motion";
 export default function Wellness() {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 1, ease: "easeOut" }}
       className="relative md:h-full h-full w-full flex items-center justify-center pt-10 md:pt-10"
     >
       <div className=" h-full flex justify-between items-center md:w-[85vw] w-full px-5 md:pb-10 bg-cover bg-center bg-[url('/images/home-3.jpg')] before:absolute before:inset-0 before:bg-black/40 before:z-0">

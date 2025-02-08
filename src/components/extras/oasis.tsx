@@ -50,10 +50,6 @@ export default function Oasis() {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 1, ease: "easeOut" }}
       className="relative md:h-screen h-full w-full flex items-center justify-center pt-6 md:pt-14 md:pb-4"
     >
       
