@@ -7,6 +7,10 @@
   --foreground: #ededed;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -24,3 +28,4 @@ body {
   src: url("/public/fonts/Manrope3\ Regular\ 400.otf") format("opentype");
   font-display: swap;
 }
+

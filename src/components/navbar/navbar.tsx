@@ -11,10 +11,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // Added the isOpen state
 
   const navLinks = [
-    { name: "Services", href: "/services" },
-    { name: "Booking", href: "/booking" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Services", href: "#services" },
+    { name: "Booking", href: "#booking" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -25,7 +25,7 @@ const Navbar = () => {
         {/* Left-side Desktop Links */}
         <div className="hidden md:flex flex-1 justify-end lg:gap-28 md:gap-14 gap-8">
           {navLinks.slice(0, Math.ceil(navLinks.length / 2)).map((link) => (
-            <Link key={link.name} href={link.href}>
+            <Link key={link.name} href={link.href} >
               <motion.span
                 className="text-amber-50 hover:text-white transition-colors duration-300 lg:text-xl md:text-lg"
                 whileHover={{ scale: 1.1 }}

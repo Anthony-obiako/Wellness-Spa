@@ -7,6 +7,7 @@ export default function Wellness() {
   return (
     <motion.section
       className="relative md:h-full h-full w-full flex items-center justify-center pt-10 md:pt-10"
+      id="about"
     >
       <div className=" h-full flex justify-between items-center md:w-[85vw] w-full px-5 md:pb-10 bg-cover bg-center bg-[url('/images/home-3.jpg')] before:absolute before:inset-0 before:bg-black/40 before:z-0">
         <div className="w-full flex flex-col h-full md:px-0 md:pt-14 md:mr-6 z-10 ">

@@ -29,7 +29,7 @@ export default function Modal({ open, closeModal }: ModalProps) {
 
   return (
     <Transition appear show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-50" onClose={closeModal}>
+      <Dialog as="div" id="booking" className="relative z-50" onClose={closeModal}>
         <div className="fixed inset-0 flex items-center justify-center">
           {/* Full-screen background image */}
           <Dialog.Panel className="fixed inset-0 bg-cover bg-center bg-[url('/images/envelop-1.png')] flex items-center justify-center">

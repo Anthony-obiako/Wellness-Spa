@@ -211,7 +211,7 @@ export default function Services() {
   );
 
   return (
-    <motion.section className="mt-16 relative h-full w-full items-center justify-center flex bg-cover bg-center bg-[url('/images/grass-1.jpg')] before:absolute before:inset-0 before:bg-black/60 before:z-0 pt-10 md:pt-14 px-4 md:pb-10 md:mb-10">
+    <motion.section id="services"  className="mt-16 relative h-full w-full items-center justify-center flex bg-cover bg-center bg-[url('/images/grass-1.jpg')] before:absolute before:inset-0 before:bg-black/60 before:z-0 pt-10 md:pt-14 px-4 md:pb-10 md:mb-10">
       {/* Gradient Overlay */}
       <div className="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black/100 from-20% via-black/90 via-80% to-transparent to-200%" />
       <div className="absolute inset-x-0 bottom-0 md:h-1/4 h-1/2 bg-gradient-to-t from-black/90 from-20% to-transparent" />

@@ -33,7 +33,7 @@ const Booking = ({ main }: prop) => {
   if (main) {
     return (
       <div className="bg-white/10 backdrop-blur-lg sm:flex max-w-5xl rounded-3xl px-2">
-        <section className="justify-items-center rounded-2xl my-5 py-2 px-2 text-start md:p-6 md:justify-between md:items-center w-full">
+        <section id="contact" className="justify-items-center rounded-2xl my-5 py-2 px-2 text-start md:p-6 md:justify-between md:items-center w-full">
           <div className="text-amber-50 mt-2 mb-4">
             <h1 className="px-1 font-activa mb-4 md:mb-2 text-lg md:text-2xl">
               BOOK YOUR VISIT RIGHT NOW
@@ -157,7 +157,7 @@ const Booking = ({ main }: prop) => {
     );
   } else {
     return (
-      <div className="px-4 w-full justify-items-center">
+      <div id="booking" className="px-4 w-full justify-items-center">
         <section className="justify-items-center text-center lg:rounded-3xl rounded-2xl mx-2 my-5 py-2 px-2 bg-white/5 backdrop-blur-lg sm:flex sm:text-start lg:p-10 md:p-7 lg:max-w-5xl md:max-w-3xl md:justify-between md:items-center w-full">
           <div className="text-amber-50 mt-2 mb-4">
             <h1 className="px-1 font-activa mb-4 md:mb-2 text-lg md:text-2xl">
