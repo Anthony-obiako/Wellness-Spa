@@ -78,7 +78,7 @@ const Booking = ({ main }: prop) => {
               CONTACT
             </h1>
             <p className="text-sm max-w-lg">
-              Contact us for more information or support. We're always ready to
+              Contact us for more information or support. We&#39;re always ready to
               help
             </p>
           </div>
@@ -137,7 +137,7 @@ const Booking = ({ main }: prop) => {
                 >
                   <FaInstagram className="w-3 h-3" />
                 </a>
-                <span>We're on Instagram</span>
+                <span>We&#39;re on Instagram</span>
               </div>
               <div className="flex items-center gap-3">
                 <a
@@ -148,7 +148,7 @@ const Booking = ({ main }: prop) => {
                 >
                   <FaFacebookF className="w-3 h-3" />
                 </a>
-                <span>We're on Facebook</span>
+                <span>We&#39;re on Facebook</span>
               </div>
             </div>
           </div>

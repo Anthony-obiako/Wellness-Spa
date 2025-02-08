@@ -11,7 +11,7 @@ interface ModalProps {
   children: ReactNode;
 }
 
-export default function Modal({ open, closeModal, children }: ModalProps) {
+export default function Modal({ open, closeModal }: ModalProps) {
   const [formData, setFormData] = useState({
     name: "",
     phonenumber: "",

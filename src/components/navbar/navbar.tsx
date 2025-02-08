@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Bars3Icon, XMarkIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { FaInstagram } from "react-icons/fa";
