@@ -14,7 +14,7 @@ export default function Wellness() {
 
           {/* Bottom Gradient Overlay */}
           <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/90 to-transparent" />
-          <h1 className=" font-activa text-xl md:text-3xl lg:text-5xl text-amber-50 md:mb-4 mb-8 z-10 w-full">
+          <h1 className=" font-activa text-xl md:text-3xl lg:text-5xl text-amber-50 md:mb-4 mb-8 z-20 w-full">
             <span className="lg:ml-20 md:ml-14 ml-5 block">
               A WELLNESS SPA COMPLEX{" "}
             </span>{" "}
@@ -31,7 +31,7 @@ export default function Wellness() {
                   hidden: {},
                   visible: {},
                 }}
-                className="flex flex-col max-h-[310px] h-full lg:gap-16 gap-8 z-10 mb-44 md:mb-0"
+                className="flex flex-col max-h-[310px] h-full lg:gap-16 gap-8 z-20 mb-44 md:mb-0"
               >
                 <motion.p
                   variants={{
