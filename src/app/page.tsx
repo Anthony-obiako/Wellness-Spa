@@ -10,7 +10,7 @@ import Services from "@/components/extras/services";
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden font-manrope">
       <Navbar />
       <Hero />
       <Wellness />

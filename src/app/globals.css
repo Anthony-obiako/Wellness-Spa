@@ -18,3 +18,9 @@ body {
   src: url("/fonts/Anticva-Regular.otf") format("opentype");
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/public/fonts/Manrope3\ Regular\ 400.otf") format("opentype");
+  font-display: swap;
+}
