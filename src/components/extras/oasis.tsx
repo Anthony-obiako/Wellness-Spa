@@ -60,7 +60,7 @@ export default function Oasis() {
             key={activeIndex}
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 1 }}
+            exit={{ opacity: 2.5 }}
             transition={{ duration: 0.5, }}
             className="absolute inset-0 bg-cover bg-center before:absolute before:inset-0 before:bg-black/30 before:z-0"
             style={{
