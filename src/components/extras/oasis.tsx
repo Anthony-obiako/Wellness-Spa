@@ -88,7 +88,7 @@ export default function Oasis() {
             >
               <motion.p
                 variants={{
-                  hidden: { opacity: 0, y: 400 },
+                  hidden: { opacity: 0, y: 200 },
                   visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
@@ -99,7 +99,7 @@ export default function Oasis() {
 
               <motion.p
                 variants={{
-                  hidden: { opacity: 0, y: 400 },
+                  hidden: { opacity: 0, y: 200 },
                   visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}

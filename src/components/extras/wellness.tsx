@@ -25,7 +25,7 @@ export default function Wellness() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
-                transition={{ delay: 8 }}
+                transition={{  }}
                 variants={{
                   hidden: {},
                   visible: {},
@@ -34,10 +34,10 @@ export default function Wellness() {
               >
                 <motion.p
                   variants={{
-                    hidden: { opacity: -90, y: 300 },
+                    hidden: { opacity: 0, y: 100 },
                     visible: { opacity: 1, y: 0 },
                   }}
-                  transition={{ duration: 1.2, ease: "easeOut", delay: 1.5 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
                   className="w-72 lg:w-[350px] h-auto lg:text-sm text-xs bg-white/30 backdrop-blur-xl lg:py-6 px-3 py-4 lg:px-[22px] rounded-2xl xl:ml-24 lg:ml-10 mr-2 text-amber-50"
                 >
                   We were inspired to create a space for true relaxation of body
@@ -46,10 +46,10 @@ export default function Wellness() {
                 </motion.p>
                 <motion.p
                   variants={{
-                    hidden: { opacity: -90, y: 300 },
+                    hidden: { opacity: 0, y: 100 },
                     visible: { opacity: 1, y: 0 },
                   }}
-                  transition={{ duration: 1.2, ease: "easeOut", delay: 1.5 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
                   className="w-72 lg:w-[350px] h-auto lg:text-sm text-xs bg-white/30 backdrop-blur-xl lg:py-6 px-3 py-4 lg:px-[22px] rounded-2xl ml-auto md:mr-10"
                 >
                   AB Wellness is a comprehensive centre offering a range of
