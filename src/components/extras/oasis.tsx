@@ -58,10 +58,10 @@ export default function Oasis() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeIndex}
-            initial={{ opacity: 0.9 }}
-            animate={{ opacity: 0.9 }}
-            exit={{ opacity: 0.9 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 1, }}
             className="absolute inset-0 bg-cover bg-center before:absolute before:inset-0 before:bg-black/30 before:z-0"
             style={{
               backgroundImage: `url(${buttonContents[activeIndex].bgImage})`,
@@ -92,7 +92,7 @@ export default function Oasis() {
                   visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
-                className={`w-56 md:w-[310px] h-auto md:text-sm text-xs text-amber-50 bg-white/20 backdrop-blur-lg md:py-6 px-3 py-4 md:px-[22px] rounded-2xl ${buttonContents[activeIndex].textPosition1}`}
+                className={`w-56 md:w-[310px] h-auto md:text-sm text-xs text-amber-50 bg-white/30 backdrop-blur-xl md:py-6 px-3 py-4 md:px-[22px] rounded-2xl ${buttonContents[activeIndex].textPosition1}`}
               >
                 {buttonContents[activeIndex].text1}
               </motion.p>
@@ -103,7 +103,7 @@ export default function Oasis() {
                   visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                className={`w-56 md:w-[310px] h-auto md:text-sm text-xs text-amber-50 bg-white/20 backdrop-blur-lg md:py-6 px-3 py-4 md:px-[22px] rounded-2xl ${buttonContents[activeIndex].textPosition2}`}
+                className={`w-56 md:w-[310px] h-auto md:text-sm text-xs text-amber-50 bg-white/30 backdrop-blur-xl md:py-6 px-3 py-4 md:px-[22px] rounded-2xl ${buttonContents[activeIndex].textPosition2}`}
               >
                 {buttonContents[activeIndex].text2}
               </motion.p>
