@@ -38,7 +38,7 @@ export default function Wellness() {
                     visible: { opacity: 1, y: 0 },
                   }}
                   transition={{ duration: 1.2, ease: "easeOut", delay: 1.5 }}
-                  className="w-72 lg:w-[350px] h-auto lg:text-sm text-xs bg-white/20 backdrop-blur-xl lg:py-6 px-3 py-4 lg:px-[22px] rounded-2xl xl:ml-24 lg:ml-10 mr-2 text-amber-50"
+                  className="w-72 lg:w-[350px] h-auto lg:text-sm text-xs bg-white/30 backdrop-blur-xl lg:py-6 px-3 py-4 lg:px-[22px] rounded-2xl xl:ml-24 lg:ml-10 mr-2 text-amber-50"
                 >
                   We were inspired to create a space for true relaxation of body
                   and soul, with a focus on the beloved slavic tradition of
@@ -50,7 +50,7 @@ export default function Wellness() {
                     visible: { opacity: 1, y: 0 },
                   }}
                   transition={{ duration: 1.2, ease: "easeOut", delay: 1.5 }}
-                  className="w-72 lg:w-[350px] h-auto lg:text-sm text-xs bg-white/20 backdrop-blur-xl lg:py-6 px-3 py-4 lg:px-[22px] rounded-2xl ml-auto md:mr-10"
+                  className="w-72 lg:w-[350px] h-auto lg:text-sm text-xs bg-white/30 backdrop-blur-xl lg:py-6 px-3 py-4 lg:px-[22px] rounded-2xl ml-auto md:mr-10"
                 >
                   AB Wellness is a comprehensive centre offering a range of
                   services, including a hamman, Finish sauna, Russian steam
