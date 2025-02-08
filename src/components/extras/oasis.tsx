@@ -72,7 +72,7 @@ export default function Oasis() {
         <div className="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black/100 from-10% via-black/90 via-40% to-transparent to-100%" />
         <div className="absolute inset-x-0 bottom-0 md:h-1/4 h-1/2 bg-gradient-to-t from-black/90 from-20% to-transparent" />
 
-        <div className="w-full flex flex-col h-full before:z-10 px-4 md:px-[100px] md:pt-14">
+        <div className="w-full flex flex-col h-full before:z-10 px-4 md:px-[100px] md:pt-14 z-10">
           <h1 className="font-activa text-xl md:text-3xl lg:text-5xl text-amber-50 md:mb-16 mb-14 z-10 w-full lg:ml-20 md:ml-14 ml-5">
             AN OASIS OF RELAXATION
           </h1>
@@ -92,7 +92,7 @@ export default function Oasis() {
                   visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
-                className={`w-56 md:w-[310px] h-auto md:text-sm text-xs bg-white/20 backdrop-blur-lg md:py-6 px-3 py-4 md:px-[22px] rounded-2xl ${buttonContents[activeIndex].textPosition1}`}
+                className={`w-56 md:w-[310px] h-auto md:text-sm text-xs text-amber-50 bg-white/20 backdrop-blur-lg md:py-6 px-3 py-4 md:px-[22px] rounded-2xl ${buttonContents[activeIndex].textPosition1}`}
               >
                 {buttonContents[activeIndex].text1}
               </motion.p>
@@ -103,7 +103,7 @@ export default function Oasis() {
                   visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                className={`w-56 md:w-[310px] h-auto md:text-sm text-xs bg-white/20 backdrop-blur-lg md:py-6 px-3 py-4 md:px-[22px] rounded-2xl ${buttonContents[activeIndex].textPosition2}`}
+                className={`w-56 md:w-[310px] h-auto md:text-sm text-xs text-amber-50 bg-white/20 backdrop-blur-lg md:py-6 px-3 py-4 md:px-[22px] rounded-2xl ${buttonContents[activeIndex].textPosition2}`}
               >
                 {buttonContents[activeIndex].text2}
               </motion.p>
