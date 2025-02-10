@@ -6,7 +6,6 @@ import { Bars3Icon, XMarkIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import { Autoplay } from "swiper/modules";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // Added the isOpen state
