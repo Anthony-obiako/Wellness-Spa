@@ -3,14 +3,13 @@
 import { motion } from "framer-motion";
 import Button from "@/components/button/button";
 import Image from "next/image";
-import HeroImage from "/public/images/hero-img.webp";
 
 export default function Hero() {;
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center bg-cover bg-center before:absolute before:inset-0 before:bg-black/30 before:z-0 pt-48">
       <Image
-        src={HeroImage}
+        src="/images/Hero-img.jpg"
         alt="Hero image"
         fill
         sizes={'auto'}
