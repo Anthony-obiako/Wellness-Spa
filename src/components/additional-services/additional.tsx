@@ -39,6 +39,7 @@ export default function Additional() {
                   sizes={'auto'}
                   style={{'objectFit': 'cover',}}
                   className=" w-full rounded-3xl border border-black"
+                  priority
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/100 from-10% via-black/30 via-30% to-transparent to-90% flex items-end justify-center p-1 pb-4">
