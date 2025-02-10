@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Bars3Icon, XMarkIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
@@ -45,6 +45,8 @@ const Navbar = () => {
               alt="wellness logo"
               width={70}
               height={70}
+              className="w-14"
+              priority
             />
           </div>
         </Link>
@@ -94,28 +96,31 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          className="md:hidden bg-white/80 backdrop-blur-lg py-4 shadow-md"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="flex flex-col items-center gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-              >
-                <span className="text-gray-700 hover:text-teal-600 transition-colors duration-300">
-                  {link.name}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="md:hidden bg-[#765331]/50 backdrop-blur-lg py-4 shadow-md h-screen"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex flex-col items-center gap-[2.5rem] h-[calc(100%-68px)] justify-center">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <span className="text-white font-medium text-xl hover:text-teal-600 transition-colors duration-300">
+                    {link.name}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

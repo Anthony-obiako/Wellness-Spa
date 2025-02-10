@@ -95,31 +95,71 @@ export default function IMMERSE() {
             transition={{ type: "spring", stiffness: 70, damping: 30 }}
             onClick={() => !isActive && setActiveImage(index)}
           >
-            <Image
-              src={img}
-              alt="Spa facility"
-              fill
-              className="rounded-3xl object-cover shadow-xl"
-            />
+            <div className="w-full h-full relative">
+              <Image
+                src={img}
+                alt="Spa facility"
+                fill
+                className="rounded-3xl object-cover shadow-xl"
+                sizes={'auto'}
+              />
+              {isActive && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.9 }} // Delays appearance until after image transition
+                  className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[730px] flex justify-between z-30"
+                >
+                  <button
+                    onClick={prevImage}
+                    className="bg-black/20 px-[.5rem] py-[.5rem] rounded-full backdrop-blur-sm hover:bg-black/50 transition-all"
+                  >
+                    <span className="text-5xl text-white/50 font-thin">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                      </svg>
+                    </span>
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="bg-black/20 px-[.5rem] py-[.5rem] flex items-center rounded-full backdrop-blur-sm hover:bg-black/50 transition-all"
+                  >
+                    <span className="text-5xl text-white/50 font-thin">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                      </svg>
+                    </span>
+                  </button>
+                </motion.div>
+              )}
+            </div>
           </motion.div>
         );
       })}
 
       {/* Arrows positioned relative to main image */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[730px] flex justify-between z-30">
+      {/* <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[730px] flex justify-between z-30">
         <button
           onClick={prevImage}
-          className="bg-black/20 px-3 rounded-full backdrop-blur-sm hover:bg-black/50 transition-all"
+          className="bg-black/20 px-3 py-[.5rem] rounded-full backdrop-blur-sm hover:bg-black/50 transition-all"
         >
-          <span className="text-5xl text-white/50 font-thin">&lt;</span>
+          <span className="text-5xl text-white/50 font-thin">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </span>
         </button>
         <button
           onClick={nextImage}
-          className="bg-black/20 px-3 rounded-full backdrop-blur-sm hover:bg-black/50 transition-all"
+          className="bg-black/20 px-3 flex items-center rounded-full backdrop-blur-sm hover:bg-black/50 transition-all"
         >
-          <span className="text-5xl text-white/50 font-thin">&gt;</span>
+          <span className="text-5xl text-white/50 font-thin">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </span>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 

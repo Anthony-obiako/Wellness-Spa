@@ -166,6 +166,7 @@ export default function Services() {
               alt={currentService.title}
               fill
               className="object-cover rounded-3xl"
+              sizes={'auto'}
             />
           </motion.div>
         ))}
@@ -231,6 +232,7 @@ export default function Services() {
                 alt={currentService.title}
                 fill
                 className=" object-cover rounded-3xl"
+                sizes={'auto'}
               />
 
               {/* Navigation controls */}
@@ -266,7 +268,7 @@ export default function Services() {
                       className={`text-end ${
                         activeService === index
                           ? "text-amber-50"
-                          : "text-white/15 hover:text-amber-50"
+                          : "text-white/30 hover:text-amber-50"
                       } transition-colors`}
                     >
                       <p>{service.title}</p>
@@ -303,13 +305,14 @@ export default function Services() {
                 <div className="flex-1 flex gap-4 mt-3 max-h-48 -ml-20 place-self-end lg:mt-5">
                   <Button
                     modalContent
-                    className="bg-white/5 backdrop-blur-xl max-h-40 max-w-36 w-full h-full rounded-2xl justify-items-center font-bold text-amber-50 hover:bg-amber-50 hover:text-gray-500 transition-all duration-1000 content-center"
+                    className="bg-white/5 backdrop-blur-xl max-h-40 max-w-36 w-full p-1 h-full rounded-2xl justify-items-center font-bold text-amber-50 hover:bg-amber-50 hover:text-gray-500 transition-all duration-1000 content-center"
                   >
                     <Image
                       src="/images/wellness-logo.png"
                       alt="logo"
                       width={50}
                       height={50}
+                      sizes={'auto'}
                     />
                     <p>Book a visit</p>
                   </Button>
@@ -328,6 +331,7 @@ export default function Services() {
                         width={1000}
                         height={1000}
                         className="h-full w-full rounded-lg object-cover"
+                        sizes={'auto'}
                       />
                     </div>
                   ))}
