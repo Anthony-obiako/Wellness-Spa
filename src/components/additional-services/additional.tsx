@@ -35,9 +35,10 @@ export default function Additional() {
                 <Image
                   src={service.image}
                   alt={service.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg border-none w-full"
+                  fill
+                  sizes={'auto'}
+                  style={{'objectFit': 'cover',}}
+                  className=" w-full rounded-3xl border border-black"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/100 from-10% via-black/30 via-30% to-transparent to-90% flex items-end justify-center p-1 pb-4">

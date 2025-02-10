@@ -40,6 +40,8 @@ const Footer = () => {
                 alt="wellness logo"
                 width={50}
                 height={50}
+                sizes={'auto'}
+                priority
               />
             </div>
           </Link>
@@ -105,6 +107,7 @@ const Footer = () => {
                 alt="wellness logo"
                 width={50}
                 height={50}
+                sizes={'auto'}
               />
             </div>
           </Link>
